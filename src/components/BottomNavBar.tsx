@@ -20,6 +20,11 @@ const BottomNavBar: FC = () => {
         <span className="text-sm text-gray-400">Earn</span>
       </NavLink>
     </button>
+    <button className="flex flex-col items-center bg-white">
+      <NavLink to="/earn" className="flex flex-col items-center bg-white">
+        <span className="text-sm text-gray-400"></span>
+      </NavLink>
+    </button>
 
     {/* Circular Button in the center */}
     <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
@@ -31,7 +36,11 @@ const BottomNavBar: FC = () => {
       <span className="text-sm text-gray-400">mining</span>
 
     </div>
-
+    <button className="flex flex-col items-center bg-white">
+      <NavLink to="/earn" className="flex flex-col items-center bg-white">
+        <span className="text-sm text-gray-400"></span>
+      </NavLink>
+    </button>
     <button className="flex flex-col items-center bg-white">
       <NavLink to="/friends" className="flex flex-col items-center bg-white">
         <TbFriends className="text-2xl text-gray-400" />

@@ -10,14 +10,14 @@ const BottomNavBar: FC = () => {
     <button className="flex flex-col items-center bg-white">
       <NavLink to="/" className={({ isActive }) => isActive ? "text-blue-500" : "text-gray-400"}>
         <AiOutlineSearch className="text-2xl text-gray-400" />
-        <span className="text-sm text-gray-400">Discovery</span>
+        <span className="text-sm text-gray-400">Earn</span>
       </NavLink>
     </button>
 
     <button className="flex flex-col items-center bg-white">
       <NavLink to="/earn" className="flex flex-col items-center bg-white">
         <PiCoins className="text-2xl text-gray-400" />
-        <span className="text-sm text-gray-400">Earn</span>
+        <span className="text-sm text-gray-400">Cards</span>
       </NavLink>
     </button>
     <button className="flex flex-col items-center bg-white">
@@ -33,7 +33,7 @@ const BottomNavBar: FC = () => {
           <PiCoins className="text-3xl" />
         </NavLink>
       </button>
-      <span className="text-sm text-gray-400">mining</span>
+      <span className="text-sm text-gray-400">Discovery</span>
 
     </div>
     <button className="flex flex-col items-center bg-white">

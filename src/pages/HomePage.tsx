@@ -13,7 +13,7 @@ const HomePage: React.FC = () => {
          <Router>
       <div className="h-screen flex flex-col">
         {/* Main content area */}
-        <div className="flex-grow p-4">
+        <div className="flex-grow overflow-auto">
           <Routes>
             <Route path="/discovery_app" element={<DiscoveryPage />} />
             <Route path="/earn" element={<EarnPage />} />

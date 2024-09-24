@@ -5,7 +5,7 @@ import { PiCoins } from "react-icons/pi";
 import { TbFriends } from "react-icons/tb";
 const BottomNavBar: FC = () => {
   return (
-<nav className="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-200">
+<nav className="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-200 flex-shrink-0">
   <div className="max-w-lg mx-auto flex justify-around items-center py-3 relative">
     <button className="flex flex-col items-center bg-white">
       <NavLink to="/earn" className={({ isActive }) => isActive ? "text-blue-500" : "text-gray-400"}>

@@ -15,8 +15,9 @@ const HomePage: React.FC = () => {
         {/* Main content area */}
         <div className="flex-grow p-4">
           <Routes>
-            <Route path="/" element={<DiscoveryPage />} />
+            <Route path="/discovery_app" element={<DiscoveryPage />} />
             <Route path="/earn" element={<EarnPage />} />
+            <Route path="/cards" element={<EarnPage />} />
             <Route path="/friends" element={<FriendsPage />} />
             <Route path="/profile" element={<ProfilePage />} />
           </Routes>

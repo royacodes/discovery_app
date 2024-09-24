@@ -1,4 +1,5 @@
 import React, { useState, FC } from 'react';
+import SearchBar from '../components/SearchBar/SearchBar';
 
 const DiscoveryPage: FC =() => {
 
@@ -8,30 +9,22 @@ const DiscoveryPage: FC =() => {
     // You can handle the search functionality here
   };
   const cards = [
-    { id: 1, title: 'Card 1', description: 'This is the first card.' },
-    { id: 2, title: 'Card 2', description: 'This is the second card.' },
-    { id: 3, title: 'Card 3', description: 'This is the third card.' },
-    { id: 4, title: 'Card 4', description: 'This is the fourth card.' },
-    { id: 5, title: 'Card 5', description: 'This is the fifth card.' },
-    { id: 6, title: 'Card 6', description: 'This is the sixth card.' },
+    { id: 1, title: 'Card 1', description: 'This is the first card.', price: 10 },
+    { id: 2, title: 'Card 2', description: 'This is the second card.', price: 10 },
+    { id: 3, title: 'Card 3', description: 'This is the third card.', price: 10 },
+    { id: 4, title: 'Card 4', description: 'This is the fourth card.', price: 10 },
+    { id: 5, title: 'Card 5', description: 'This is the fifth card.', price: 10 },
+    { id: 6, title: 'Card 6', description: 'This is the sixth card.', price: 10 },
   ];
   return (
     <>
-        <div className="h-screen flex flex-col">
-        <div className="p-0">
+        <div className="flex flex-col">
+           {/* Main content area */}
+      {/* <h1 className="text-center text-3xl font-bold mb-6">Discovery Page</h1> */}
       {/* Search Bar */}
-      <div className="w-full mb-6">
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={handleSearch}
-          placeholder="Search..."
-          className="w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-      </div>
-
-      {/* Main content area */}
-      <h1 className="text-center text-3xl font-bold mb-6">Discovery Page</h1>
+      <div>
+      <SearchBar searchTerm={searchTerm} handleSearch={handleSearch} />
+    </div>
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {cards.map((card) => (
           <div
@@ -43,7 +36,6 @@ const DiscoveryPage: FC =() => {
           </div>
         ))}
       </div>
-    </div>
     </div>
     </>
   )

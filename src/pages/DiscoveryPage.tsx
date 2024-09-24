@@ -1,5 +1,6 @@
 import React, { useState, FC } from 'react';
 import SearchBar from '../components/SearchBar/SearchBar';
+import CategoryHeader from '../components/Discovery/CategoryHeader';
 
 const DiscoveryPage: FC =() => {
 
@@ -25,6 +26,7 @@ const DiscoveryPage: FC =() => {
       <div>
       <SearchBar searchTerm={searchTerm} handleSearch={handleSearch} />
     </div>
+    <CategoryHeader title='Featured' handleMore={() => {}}/>
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {cards.map((card) => (
           <div

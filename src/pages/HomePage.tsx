@@ -10,22 +10,22 @@ import ProfilePage from './ProfilePage';
 const HomePage: React.FC = () => {
   return (
     <>
-         <Router>
-      <div className="h-screen flex flex-col">
-        {/* Main content area */}
-        <div className="flex-grow overflow-auto">
-          <Routes>
-            <Route path="/discovery_app" element={<DiscoveryPage />} />
-            <Route path="/earn" element={<EarnPage />} />
-            <Route path="/cards" element={<EarnPage />} />
-            <Route path="/friends" element={<FriendsPage />} />
-            <Route path="/profile" element={<ProfilePage />} />
-          </Routes>
-        </div>
-        {/* Bottom Navbar */}
-        <BottomNavBar />
+          <Router>
+    <div className="h-screen w-full flex flex-col m-0 p-0">
+      {/* Main content area */}
+      <div className="flex-grow overflow-auto m-0 p-0 w-full">
+        <Routes>
+          <Route path="/discovery_app" element={<DiscoveryPage />} />
+          <Route path="/earn" element={<EarnPage />} />
+          <Route path="/cards" element={<EarnPage />} />
+          <Route path="/friends" element={<FriendsPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+        </Routes>
       </div>
-    </Router>
+      {/* Bottom Navbar */}
+      <BottomNavBar />
+    </div>
+  </Router>
     </>
   )
 }

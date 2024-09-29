@@ -28,7 +28,7 @@ const BottomNavBar: FC = () => {
 
     {/* Circular Button in the center */}
     <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-      <button className="w-16 h-16 bg-deep-blue text-white rounded-full shadow-lg flex items-center justify-center border-4 border-white">
+      <button className="w-16 h-16 bg-primary-color text-white rounded-full shadow-lg flex items-center justify-center border-4 border-white">
         <NavLink to="/discovery_app" className="flex items-center justify-center">
         
           <MdDashboard className="text-3xl" />

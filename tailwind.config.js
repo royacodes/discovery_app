@@ -11,6 +11,7 @@ module.exports = {
         "silver-color": "#C0C0C0",
         "bold-gold": "#FFD700",
         "gray-sh": "#F5F5F5",
+        "primary-color": "#45AAB8",
       },
     },
   },

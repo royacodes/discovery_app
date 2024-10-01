@@ -1,13 +1,9 @@
-
-import { FC } from 'react';
-import { CardItemProps } from './CardItem.types';
-
-const CardItem: FC<CardItemProps> = ({id, title, description, price, handleClick }) => {
+const CardItem = ({ id, title, description, price, handleClick }) => {
   return (
-   <>
- <div
+    <>
+      <div
         key={id}
-        className=" bg-white shadow-lg rounded-lg border border-gray-200"
+        className="bg-white shadow-lg rounded-lg border border-gray-200"
       >
         <div className="relative">
           <img
@@ -20,16 +16,14 @@ const CardItem: FC<CardItemProps> = ({id, title, description, price, handleClick
             <p className="text-white text-xs mt-1 truncate w-full max-w-[calc(100%-32px)] overflow-hidden whitespace-nowrap text-ellipsis">
               {description}
             </p>
-            <div className='w-full max-w-[calc(100%-32px)] flex justify-between mt-1'>
-            <p className="text-white text-sm font-bold">${price}</p>
-            <p className="text-white text-sm font-bold">exp: 24/07</p>
-
+            <div className="w-full max-w-[calc(100%-32px)] flex justify-between mt-1">
+              <p className="text-white text-sm font-bold">${price}</p>
+              <p className="text-white text-sm font-bold">exp: 24/07</p>
             </div>
           </div>
         </div>
       </div>
-   
-   </>
+    </>
   );
 };
 

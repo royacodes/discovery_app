@@ -22,7 +22,7 @@ const HomePage = () => {
             </Routes>
           </div>
           {/* Bottom Navbar */}
-          <BottomNavBar />
+          {/* <BottomNavBar /> */}
         </div>
       </Router>
     </>

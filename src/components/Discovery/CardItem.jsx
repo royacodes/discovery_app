@@ -3,14 +3,14 @@ const CardItem = ({ id, title, description, price, handleClick }) => {
     <>
       <div
         key={id}
-        className="bg-white shadow-lg rounded-lg border border-gray-200"
+        className="bg-black shadow-white shadow-lg rounded-lg border border-gray-200"
       >
         <div className="relative">
-          <img
+          {/* <img
             src="src/assets/patterns/pat1.jpg"
             alt={title}
             className="w-full h-20 object-cover rounded-lg"
-          />
+          /> */}
           <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-10 hover:bg-black hover:bg-opacity-50 rounded-lg">
             <h2 className="text-white text-lg font-semibold">{title}</h2>
             <p className="text-white text-xs mt-1 truncate w-full max-w-[calc(100%-32px)] overflow-hidden whitespace-nowrap text-ellipsis">

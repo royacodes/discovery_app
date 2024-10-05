@@ -20,6 +20,8 @@ const GlobeComponent = () => {
     globeEl.current.camera().position.z = 500; // Default is 1000, decrease to zoom in, increase to zoom out
   }, []);
   useEffect(() => {
+    globeEl.current.camera().position.z = 500; // Default is 1000, decrease to zoom in, increase to zoom out
+
     // Access OrbitControls via ref to listen to zoom changes
     const controls = globeEl.current.controls();
 
@@ -29,7 +31,7 @@ const GlobeComponent = () => {
       // Calculate the zoom level by using the camera's position (distance from the origin)
 
       // Check if zoom level has changed significantly
-      if (cameraPosition < 400) {
+      if (cameraPosition < 200) {
         // console.log("Zoom detected", cameraPosition);
         navigate("/cards");
       }

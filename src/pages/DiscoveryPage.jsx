@@ -4,6 +4,8 @@ import CategoryHeader from "../components/Discovery/CategoryHeader.jsx";
 import CardItem from "../components/Discovery/CardItem.jsx";
 import { FaStar } from "react-icons/fa";
 import GlobeComponent from "../components/GlobeComponent.jsx";
+import "../components/Discovery/discovery.css";
+import FloatingButton from "../components/FloatingButton.jsx";
 
 const DiscoveryPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -40,105 +42,47 @@ const DiscoveryPage = () => {
     },
   ];
 
-  const cats = [
-    { id: 1, title: "Category" },
-    { id: 2, title: "Category" },
-    { id: 3, title: "Category" },
-    { id: 4, title: "Category" },
-    { id: 5, title: "Category" },
-    { id: 6, title: "Category" },
-  ];
-
-  // return (
-  //   <>
-  //     <div className="flex flex-col w-full bg-black px-4 pt-4 pb-16">
-  //       {/* Image below Search Bar */}
-  //       <div className="flex justify-between items-center mb-6">
-  //         <div className="flex justify-start items-center">
-  //           <img
-  //             src="src/assets/patterns/pat4.jpg" // Replace with the correct path to your profile image
-  //             alt="Profile Image"
-  //             className="w-8 h-8 rounded-full object-cover border-4 border-white shadow-lg"
-  //           />
-  //           <p className="text-white">@royaCodes</p>
-  //         </div>
-  //         <div className="flex justify-end items-center bg-black bg-opacity-20 border-purple-600 border rounded-3xl py-2 px-4 shadow-sm shadow-deep-purple">
-  //           <FaStar className="text-bold-gold text-lg" />
-  //           <p className="text-white">12BNZ</p>
-  //         </div>
-  //       </div>
-
-  //       <div className="flex justify-left my-4">
-  //         {/* <img
-  //           src="src/assets/mag.jpg"
-  //           alt="Featured Image"
-  //           className="w-1/2 object-cover"
-  //         /> */}
-  //         <GlobeComponent />
-  //         <div className="w-1/2 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-2 h-20">
-  //           {cats.map((cat) => (
-  //             <div
-  //               key={cat.id}
-  //               className="bg-[#1c1c1c] text-white text-[16px] rounded-3xl m-1 py-1 px-2 flex justify-center items-center shadow-[8px_8px_16px_#0a0a0a,-8px_-8px_16px_#333333]"
-  //             >
-  //               {cat.title}
-  //             </div>
-  //           ))}
-  //         </div>
-  //       </div>
-
-  //       {/* Search Bar */}
-  //       <div>
-  //         <SearchBar searchTerm={searchTerm} handleSearch={handleSearch} />
-  //       </div>
-
-  //       {/* Cards Grid */}
-  //       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-  //         {cards.map((card) => (
-  //           <CardItem
-  //             key={card.id}
-  //             id={card.id}
-  //             title={card.title}
-  //             description={card.description}
-  //             price={card.price.toLocaleString()}
-  //             handleClick={() => {}}
-  //           />
-  //         ))}
-  //       </div>
-
-  //       <CategoryHeader title="Featured" handleMore={() => {}} />
-  //       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-  //         {cards.map((card) => (
-  //           <CardItem
-  //             key={card.id}
-  //             id={card.id}
-  //             title={card.title}
-  //             description={card.description}
-  //             price={card.price.toLocaleString()}
-  //             handleClick={() => {}}
-  //           />
-  //         ))}
-  //       </div>
-
-  //       <CategoryHeader title="Trending" handleMore={() => {}} />
-  //       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-  //         {cards.map((card) => (
-  //           <CardItem
-  //             key={card.id}
-  //             id={card.id}
-  //             title={card.title}
-  //             description={card.description}
-  //             price={card.price.toLocaleString()}
-  //             handleClick={() => {}}
-  //           />
-  //         ))}
-  //       </div>
-  //     </div>
-  //   </>
-  // );
   return (
     <>
-      <GlobeComponent />
+      <div className="relative w-full h-full bg-black">
+        <GlobeComponent />
+        <div className="absolute inset-0 bg-black opacity-25 z-10"></div>
+        <div className="absolute top-0 left-0 right-0 text-white z-20 mx-4 max-w-full my-4">
+          <SearchBar />
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
+            <div className="flex flex-col hover:bg-gray-100 py-12 bg-opacity-20 bg-black rounded-3xl shadow-md shadow-white p-2 text-center">
+              <div>title</div>
+              <div>description</div>
+              <div className="flex justify-between">
+                <div>10$</div>
+                <div>24/07</div>
+              </div>
+            </div>
+            <div className="hover:bg-gray-100 py-12 bg-opacity-20 bg-black rounded-3xl shadow-md shadow-white p-2 text-center">
+              Discovery
+            </div>
+            <div className="hover:bg-gray-100 py-12 bg-opacity-20 bg-black rounded-3xl shadow-md shadow-white p-2 text-center">
+              Discovery
+            </div>
+            <div className="hover:bg-gray-100 py-12 bg-opacity-20 bg-black rounded-3xl shadow-md shadow-white p-2 text-center">
+              Discovery
+            </div>
+            <div className="hover:bg-gray-100 py-12 bg-opacity-20 bg-black rounded-3xl shadow-md shadow-white p-2 text-center">
+              Discovery
+            </div>
+            <div className="hover:bg-gray-100 py-12 bg-opacity-20 bg-black rounded-3xl shadow-md shadow-white p-2 text-center">
+              Discovery
+            </div>
+            <div className="hover:bg-gray-100 py-12 bg-opacity-20 bg-black rounded-3xl shadow-md shadow-white p-2 text-center">
+              Discovery
+            </div>
+            <div className="hover:bg-gray-100 py-12 bg-opacity-20 bg-black rounded-3xl shadow-md shadow-white p-2 text-center">
+              Discovery
+            </div>
+          </div>
+        </div>
+        <FloatingButton />
+      </div>
     </>
   );
 };

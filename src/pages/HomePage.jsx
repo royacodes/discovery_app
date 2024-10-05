@@ -8,6 +8,7 @@ import ProfilePage from "./ProfilePage";
 import GlobePage from "./GlobePage";
 import FloatingButton from "../components/FloatingButton";
 import AnimatedRoute from "../AnimatedRoute";
+import MapPage from "./MapPage";
 
 const HomePage = () => {
   return (
@@ -27,7 +28,7 @@ const HomePage = () => {
                 }
               />
               <Route path="/earn" element={<EarnPage />} />
-              <Route path="/cards" element={<EarnPage />} />
+              <Route path="/cards" element={<MapPage />} />
               <Route path="/friends" element={<FriendsPage />} />
               <Route path="/profile" element={<ProfilePage />} />
             </Routes>

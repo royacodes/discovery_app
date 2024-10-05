@@ -3,24 +3,16 @@ const CardItem = ({ id, title, description, price, handleClick }) => {
     <>
       <div
         key={id}
-        className="bg-black shadow-white shadow-lg rounded-lg border border-gray-200"
+        className="flex flex-col justify-center text-white hover:bg-gray-100 hover:text-gray-900 py-4 px-2 bg-opacity-20 bg-black rounded-3xl shadow-md shadow-white p-2 text-center"
       >
-        <div className="relative">
-          {/* <img
-            src="src/assets/patterns/pat1.jpg"
-            alt={title}
-            className="w-full h-20 object-cover rounded-lg"
-          /> */}
-          <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-10 hover:bg-black hover:bg-opacity-50 rounded-lg">
-            <h2 className="text-white text-lg font-semibold">{title}</h2>
-            <p className="text-white text-xs mt-1 truncate w-full max-w-[calc(100%-32px)] overflow-hidden whitespace-nowrap text-ellipsis">
-              {description}
-            </p>
-            <div className="w-full max-w-[calc(100%-32px)] flex justify-between mt-1">
-              <p className="text-white text-sm font-bold">${price}</p>
-              <p className="text-white text-sm font-bold">exp: 24/07</p>
-            </div>
-          </div>
+        <h2 className="text-lg font-semibold">{title}</h2>
+        <p className="text-xs mt-1 truncate w-full  overflow-hidden whitespace-nowrap text-ellipsis">
+          {description}
+        </p>
+        <div className="h-[1px] bg-gray-100 w-full px-4 mt-4" />
+        <div className="w-full text-sm font-medium flex justify-between mt-1">
+          <p className=" ">${price}</p>
+          <p className=" ">exp: 24/07</p>
         </div>
       </div>
     </>

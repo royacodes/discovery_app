@@ -49,36 +49,49 @@ const DiscoveryPage = () => {
         <div className="absolute inset-0 bg-black opacity-25 z-10"></div>
         <div className="absolute top-0 left-0 right-0 text-white z-20 mx-4 max-w-full my-4">
           <SearchBar />
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
-            <div className="flex flex-col hover:bg-gray-100 py-12 bg-opacity-20 bg-black rounded-3xl shadow-md shadow-white p-2 text-center">
-              <div>title</div>
-              <div>description</div>
-              <div className="flex justify-between">
-                <div>10$</div>
-                <div>24/07</div>
-              </div>
-            </div>
-            <div className="hover:bg-gray-100 py-12 bg-opacity-20 bg-black rounded-3xl shadow-md shadow-white p-2 text-center">
-              Discovery
-            </div>
-            <div className="hover:bg-gray-100 py-12 bg-opacity-20 bg-black rounded-3xl shadow-md shadow-white p-2 text-center">
-              Discovery
-            </div>
-            <div className="hover:bg-gray-100 py-12 bg-opacity-20 bg-black rounded-3xl shadow-md shadow-white p-2 text-center">
-              Discovery
-            </div>
-            <div className="hover:bg-gray-100 py-12 bg-opacity-20 bg-black rounded-3xl shadow-md shadow-white p-2 text-center">
-              Discovery
-            </div>
-            <div className="hover:bg-gray-100 py-12 bg-opacity-20 bg-black rounded-3xl shadow-md shadow-white p-2 text-center">
-              Discovery
-            </div>
-            <div className="hover:bg-gray-100 py-12 bg-opacity-20 bg-black rounded-3xl shadow-md shadow-white p-2 text-center">
-              Discovery
-            </div>
-            <div className="hover:bg-gray-100 py-12 bg-opacity-20 bg-black rounded-3xl shadow-md shadow-white p-2 text-center">
-              Discovery
-            </div>
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:mt-4 sm:pt-4 pt-4 justify-center">
+            <CardItem
+              id={1}
+              title="test"
+              description="this is a description test"
+              price="10"
+              handleClick={() => {}}
+            />
+            <CardItem
+              id={1}
+              title="test"
+              description="this is a description test"
+              price="10"
+              handleClick={() => {}}
+            />
+            <CardItem
+              id={1}
+              title="test"
+              description="this is a description test"
+              price="10"
+              handleClick={() => {}}
+            />
+            <CardItem
+              id={1}
+              title="test"
+              description="this is a description test"
+              price="10"
+              handleClick={() => {}}
+            />
+            <CardItem
+              id={1}
+              title="test"
+              description="this is a description test"
+              price="10"
+              handleClick={() => {}}
+            />
+            <CardItem
+              id={1}
+              title="test"
+              description="this is a description test"
+              price="10"
+              handleClick={() => {}}
+            />
           </div>
         </div>
         <FloatingButton />

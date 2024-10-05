@@ -28,7 +28,14 @@ const HomePage = () => {
                 }
               />
               <Route path="/earn" element={<EarnPage />} />
-              <Route path="/cards" element={<MapPage />} />
+              <Route
+                path="/cards"
+                element={
+                  <AnimatedRoute>
+                    <MapPage />
+                  </AnimatedRoute>
+                }
+              />
               <Route path="/friends" element={<FriendsPage />} />
               <Route path="/profile" element={<ProfilePage />} />
             </Routes>

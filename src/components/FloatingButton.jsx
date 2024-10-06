@@ -23,7 +23,7 @@ const FloatingButton = ({ onClick }) => {
         navigate("/cards");
         break;
       case "Wallet":
-        navigate("/profile");
+        navigate("/wallet");
         break;
       default:
         break;

@@ -9,6 +9,7 @@ import GlobePage from "./GlobePage";
 import FloatingButton from "../components/FloatingButton";
 import AnimatedRoute from "../AnimatedRoute";
 import MapPage from "./MapPage";
+import WalletPage from "./WalletPage";
 
 const HomePage = () => {
   return (
@@ -18,14 +19,7 @@ const HomePage = () => {
           {/* Main content area */}
           <div className="flex-grow overflow-auto m-0 p-0 w-full">
             <Routes>
-              <Route
-                path="/"
-                element={
-                  // <AnimatedRoute>
-                  <GlobePage />
-                  // </AnimatedRoute>
-                }
-              />
+              <Route path="/" element={<GlobePage />} />
               <Route
                 path="/discovery_app"
                 element={
@@ -34,7 +28,14 @@ const HomePage = () => {
                   </AnimatedRoute>
                 }
               />
-              <Route path="/earn" element={<EarnPage />} />
+              <Route
+                path="/wallet"
+                element={
+                  <AnimatedRoute>
+                    <WalletPage />
+                  </AnimatedRoute>
+                }
+              />
               <Route
                 path="/map"
                 element={

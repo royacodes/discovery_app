@@ -24,14 +24,16 @@ const GlobeComponent = () => {
 
     // Access OrbitControls via ref to listen to zoom changes
     const controls = globeEl.current.controls();
-
     const handleZoom = () => {
-      const cameraPosition = globeEl.current.camera().position.z;
+      const cameraPosition = globeEl.current.camera().position;
+      const distanceFromCenter = cameraPosition.length(); // Get the distance (ignoring orbit)
+
+      // console.log(`camera distance from center: ${distanceFromCenter}`);
       // console.log(`camera pos: ${cameraPosition}`);
       // Calculate the zoom level by using the camera's position (distance from the origin)
 
       // Check if zoom level has changed significantly
-      if (cameraPosition < 200) {
+      if (distanceFromCenter < 200) {
         // console.log("Zoom detected", cameraPosition);
         navigate("/cards");
       }
@@ -44,11 +46,15 @@ const GlobeComponent = () => {
       controls.removeEventListener("change", handleZoom);
     };
   }, [navigate]);
+
   return (
     <Globe
       ref={globeEl}
       globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
       backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+      onZoom={(cords) => {
+        console.log(`coords : ${cords.lat} ${cords.lng}`);
+      }}
     />
   );
 };

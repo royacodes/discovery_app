@@ -5,13 +5,14 @@ import CardItem from "./Discovery/CardItem";
 import SearchBar from "./SearchBar/SearchBar";
 import search from "../assets/search.svg";
 import { useNavigate } from "react-router-dom";
+import earth from "../assets/globe/earth.jpg";
+import nightSky from "../assets/globe/nightSky.png";
 
 const GlobeComponent = () => {
   const globeEl = useRef();
   const navigate = useNavigate();
   const [prevZoom, setPrevZoom] = useState(0);
-  const [lat, setLat] = useState(0);
-  const [lng, setLng] = useState(0);
+
   const [shouldNavigate, setShouldNavigate] = useState(false);
 
   useEffect(() => {
@@ -37,7 +38,6 @@ const GlobeComponent = () => {
 
       // Check if zoom level has changed significantly
       if (distanceFromCenter < 200) {
-        console.log("Navigating to map with:", lat); // Log the values
         setShouldNavigate(true);
         // console.log("Zoom detected", cameraPosition);
       }
@@ -54,10 +54,9 @@ const GlobeComponent = () => {
   return (
     <Globe
       ref={globeEl}
-      globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
-      backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+      globeImageUrl={earth}
+      backgroundImageUrl={nightSky}
       onZoom={(cords) => {
-        console.log(`coords : ${cords.lat} ${cords.lng}`);
         if (shouldNavigate) {
           navigate("/map", { state: { lat: cords.lat, lng: cords.lng } });
         }

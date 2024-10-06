@@ -5,7 +5,6 @@ import { useLocation } from "react-router-dom";
 const MapPage = () => {
   const location = useLocation();
   const { lat, lng } = location.state || {};
-  console.log(`map position: ${lat} ${lng}`);
   return (
     <div>
       <OpenStreetMap lat={lat} lng={lng} />

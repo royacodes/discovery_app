@@ -13,12 +13,11 @@ L.Icon.Default.mergeOptions({
   iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
   shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
 });
-const MapZoomListener = ({ navigate }) => {
+const MapZoomListener = ({ navigate, lat, lng }) => {
   const map = useMapEvents({
     zoomend: () => {
       const zoomLevel = map.getZoom();
       if (zoomLevel < 3) {
-        // If zoom level is less than 4, navigate to "discovery_app"
         navigate("/");
       }
     },
@@ -42,7 +41,7 @@ const OpenStreetMap = ({ lat, lng }) => {
           A pretty CSS3 popup. <br /> Easily customizable.
         </Popup>
       </Marker>
-      <MapZoomListener navigate={navigate} />
+      <MapZoomListener navigate={navigate} lat={lat} lng={lng} />
     </MapContainer>
   );
 };

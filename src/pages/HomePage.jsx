@@ -21,9 +21,9 @@ const HomePage = () => {
               <Route
                 path="/"
                 element={
-                  <AnimatedRoute>
-                    <GlobePage />
-                  </AnimatedRoute>
+                  // <AnimatedRoute>
+                  <GlobePage />
+                  // </AnimatedRoute>
                 }
               />
               <Route

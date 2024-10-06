@@ -10,6 +10,9 @@ const GlobeComponent = () => {
   const globeEl = useRef();
   const navigate = useNavigate();
   const [prevZoom, setPrevZoom] = useState(0);
+  const [lat, setLat] = useState(0);
+  const [lng, setLng] = useState(0);
+  const [shouldNavigate, setShouldNavigate] = useState(false);
 
   useEffect(() => {
     // Auto-rotate the globe
@@ -34,8 +37,9 @@ const GlobeComponent = () => {
 
       // Check if zoom level has changed significantly
       if (distanceFromCenter < 200) {
+        console.log("Navigating to map with:", lat); // Log the values
+        setShouldNavigate(true);
         // console.log("Zoom detected", cameraPosition);
-        navigate("/cards");
       }
     };
 
@@ -54,6 +58,9 @@ const GlobeComponent = () => {
       backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
       onZoom={(cords) => {
         console.log(`coords : ${cords.lat} ${cords.lng}`);
+        if (shouldNavigate) {
+          navigate("/map", { state: { lat: cords.lat, lng: cords.lng } });
+        }
       }}
     />
   );

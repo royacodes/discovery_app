@@ -1,11 +1,14 @@
 import React from "react";
 import OpenStreetMap from "../components/map/OpenStreetMap";
+import { useLocation } from "react-router-dom";
 
 const MapPage = () => {
+  const location = useLocation();
+  const { lat, lng } = location.state || {};
+  console.log(`map position: ${lat} ${lng}`);
   return (
     <div>
-      <h1>OpenStreetMap Example</h1>
-      <OpenStreetMap />
+      <OpenStreetMap lat={lat} lng={lng} />
     </div>
   );
 };

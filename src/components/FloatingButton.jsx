@@ -3,7 +3,7 @@ import buttonClose from "../assets/buttonClose.svg";
 import buttonOpen from "../assets/buttonOpen.svg";
 import { useNavigate } from "react-router-dom";
 
-const FloatingButton = ({ onClick }) => {
+const FloatingButton = ({ navigateToPage }) => {
   const navigate = useNavigate();
   // State to handle menu visibility
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,23 +11,6 @@ const FloatingButton = ({ onClick }) => {
   // Function to toggle the menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const navigateToPage = (page) => {
-    setIsMenuOpen(false);
-    switch (page) {
-      case "Discovery":
-        navigate("/discovery_app");
-        break;
-      case "Cards":
-        navigate("/cards");
-        break;
-      case "Wallet":
-        navigate("/wallet");
-        break;
-      default:
-        break;
-    }
   };
 
   return (

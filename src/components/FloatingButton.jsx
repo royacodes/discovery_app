@@ -14,7 +14,7 @@ const FloatingButton = ({ navigateToPage }) => {
   };
 
   return (
-    <div className="fixed bottom-5 right-5 flex flex-col items-end z-30">
+    <div className="fixed bottom-20 right-5 flex flex-col items-end z-30">
       {/* Menu that toggles open/close */}
       {isMenuOpen && (
         <div className="bg-transparent shadow-lg rounded-lg mb-2 p-3">

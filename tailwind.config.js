@@ -4,8 +4,10 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        "top-only": "0 -1px 30px rgba(255, 255, 255, 0.9)", // Custom shadow for top only
+        "top-only": "0 -1px 30px rgba(255, 255, 255, 0.9)",
+        "bottom-nav-shadow": "0 -1px 5px rgba(255, 255, 255, 0.9)",
       },
+
       keyframes: {
         rotateHorizontal: {
           "0%": { transform: "rotateY(0deg)" },

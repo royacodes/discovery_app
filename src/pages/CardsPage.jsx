@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { FaPlus } from "react-icons/fa"; // Import plus icon from react-icons
+import { FaPlus } from "react-icons/fa";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-// Card component
 const GiftCard = ({
   backgroundImage,
   title,
@@ -18,13 +19,12 @@ const GiftCard = ({
   };
   return (
     <div
-      className="border rounded-lg w-72 h-40 flex items-center justify-center shadow-md hover:shadow-lg transition-shadow"
+      className="border rounded-lg w-full h-40 flex items-center justify-center shadow-md hover:shadow-lg transition-shadow"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
       }}
     >
-      {/* Editable Title */}
       <div className="flex flex-col items-center">
         <input
           type="text"
@@ -48,15 +48,13 @@ const GiftCard = ({
             className="bg-transparent text-white text-lg font-bold text-center outline-none"
             placeholder="Enter price"
           />
-          <input
-            type="text"
-            value={expDate}
-            readOnly // This makes the input non-editable
-            onClick={(e) => e.target.showPicker()}
-            onKeyDown={preventTyping} // Prevent typing in the field
-            onChange={(e) => setExpDate(e.target.value)}
+          <DatePicker
+            selected={expDate}
+            onChange={(date) => setExpDate(date)}
+            placeholderText="Enter exp"
+            dateFormat="MM/yy"
+            showMonthYearPicker
             className="bg-transparent text-white text-lg font-bold text-center outline-none"
-            placeholder="Enter exp"
           />
         </div>
       </div>
@@ -64,7 +62,6 @@ const GiftCard = ({
   );
 };
 
-// Component to handle image selection
 const ImageSelector = ({ images, onSelect }) => {
   return (
     <div className="grid grid-cols-3 gap-2">
@@ -87,26 +84,24 @@ const CardsPage = () => {
   const [title, setTitle] = useState("Enter Card's Title");
   const [description, setDescription] = useState("Enter Card's Description");
   const [price, setPrice] = useState("Price");
-  const [expDate, setExpDate] = useState("24/07");
+  const [expDate, setExpDate] = useState(null);
 
-  // List of images for user to choose from
   const images = [
-    "https://via.placeholder.com/150/FF0000", // Example image URLs
+    "https://via.placeholder.com/150/FF0000",
     "https://via.placeholder.com/150/00FF00",
     "https://via.placeholder.com/150/0000FF",
     "https://via.placeholder.com/150/FFFF00",
     "https://via.placeholder.com/150/00FFFF",
   ];
 
-  // Handle image selection
   const handleImageSelect = (image) => {
     setSelectedImage(image);
     setShowImageSelector(false);
   };
 
   return (
-    <div className="flex flex-col items-center h-screen p-6 bg-bg-color">
-      <div className="relative border-dashed border-2 border-gray-300 rounded-lg w-72 h-40 flex items-center justify-center">
+    <div className="flex flex-col items-center h-screen w-full p-6 bg-bg-color overflow-x-hidden">
+      <div className="relative border-dashed border-2 border-gray-300 rounded-lg w-full h-40 flex items-center justify-center">
         {selectedImage ? (
           <GiftCard
             backgroundImage={selectedImage}

@@ -11,6 +11,7 @@ import AnimatedRoute from "../AnimatedRoute";
 import MapPage from "./MapPage";
 import WalletPage from "./WalletPage";
 import CardsPage from "./CardsPage";
+import BotPage from "./BotPage";
 
 const HomePage = () => {
   return (
@@ -65,7 +66,7 @@ const HomePage = () => {
                 path="/bot"
                 element={
                   <AnimatedRoute>
-                    <CardsPage />
+                    <BotPage />
                   </AnimatedRoute>
                 }
               />

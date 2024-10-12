@@ -10,6 +10,7 @@ import FloatingButton from "../components/FloatingButton";
 import AnimatedRoute from "../AnimatedRoute";
 import MapPage from "./MapPage";
 import WalletPage from "./WalletPage";
+import CardsPage from "./CardsPage";
 
 const HomePage = () => {
   return (
@@ -41,6 +42,22 @@ const HomePage = () => {
                 element={
                   <AnimatedRoute>
                     <MapPage />
+                  </AnimatedRoute>
+                }
+              />
+              <Route
+                path="/earn"
+                element={
+                  <AnimatedRoute>
+                    <EarnPage />
+                  </AnimatedRoute>
+                }
+              />
+              <Route
+                path="/cards"
+                element={
+                  <AnimatedRoute>
+                    <CardsPage />
                   </AnimatedRoute>
                 }
               />

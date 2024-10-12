@@ -11,18 +11,19 @@ import profile from "../assets/profile.webp";
 import { LuWallet } from "react-icons/lu";
 import { IoGameController } from "react-icons/io5";
 import { SiSololearn } from "react-icons/si";
+import { LuBot } from "react-icons/lu";
 
 const BottomNavBar = () => {
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-black bg-opacity-15 shadow-bottom-nav-shadow flex-shrink-0">
-      <div className="max-w-lg mx-auto flex justify-around items-center pb-1 pt-3 relative">
+      <div className="max-w-lg mx-auto flex justify-around items-center py-3 relative">
         <button className="flex flex-col items-center bg-transparent">
           <NavLink
             to="/earn"
             className="flex flex-col items-center bg-transparent"
           >
             <SiSololearn className="text-2xl text-white bg-transparent" />
-            <p className="text-gray-400 text-xs mt-[1px]">Earn</p>
+            {/* <p className="text-gray-400 text-xs mt-[1px]">Earn</p> */}
           </NavLink>
         </button>
 
@@ -32,7 +33,7 @@ const BottomNavBar = () => {
             className="flex flex-col items-center bg-transparent"
           >
             <RiAiGenerate className="text-3xl text-white bg-transparent" />
-            <p className="text-gray-400 text-xs mt-[1px]">Cards</p>
+            {/* <p className="text-gray-400 text-xs mt-[1px]">Cards</p> */}
           </NavLink>
         </button>
 
@@ -64,8 +65,8 @@ const BottomNavBar = () => {
             to="/discovery_app"
             className="flex flex-col items-center justify-center"
           >
-            <IoGameController className="text-3xl" />
-            <p className="text-gray-400 text-xs mt-[1px]">Game</p>
+            <LuBot className="text-3xl" />
+            {/* <p className="text-gray-400 text-xs mt-[1px]">Game</p> */}
           </NavLink>
         </button>
         <button className="flex flex-col items-center bg-transparent">
@@ -74,25 +75,9 @@ const BottomNavBar = () => {
             className="flex flex-col items-center justify-center"
           >
             <LuWallet className="text-3xl" />
-            <p className="text-gray-400 text-xs mt-[1px]">Wallet</p>
+            {/* <p className="text-gray-400 text-xs mt-[1px]">Wallet</p> */}
           </NavLink>
         </button>
-
-        {/* <button className="flex flex-col items-center bg-transparent">
-          <NavLink
-            to="/profile"
-            className="flex flex-col items-center bg-transparent"
-          >
-            <div className="flex items-center border-none rounded-full p-[2px]">
-              {" "}
-              <img
-                src={profile}
-                alt="Profile Avatar"
-                className="w-10 h-10 rounded-full object-cover"
-              />
-            </div>{" "}
-          </NavLink>
-        </button> */}
       </div>
     </nav>
   );

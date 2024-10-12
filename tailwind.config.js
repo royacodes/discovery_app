@@ -28,6 +28,7 @@ module.exports = {
         "primary-color": "#45AAB8",
         "ton-blue": "#0098EA",
         "tron-red": "#FF0013",
+        "bg-color": "#121212",
       },
     },
   },

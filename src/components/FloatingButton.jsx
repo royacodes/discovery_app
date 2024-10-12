@@ -20,22 +20,16 @@ const FloatingButton = ({ navigateToPage }) => {
         <div className="bg-transparent shadow-lg rounded-lg mb-2 p-3">
           <ul className="text-gray-200 space-y-3">
             <li
-              className="hover:bg-gray-100 bg-black rounded-full shadow-md shadow-white p-2 "
+              className="hover:bg-gray-100 hover:text-gray-700 bg-black rounded-full shadow-md shadow-white py-2 px-4 "
               onClick={() => navigateToPage("Discovery")}
             >
-              Discovery
+              Map
             </li>
             <li
-              className="hover:bg-gray-100 bg-black rounded-full shadow-md shadow-white p-2 "
+              className="hover:bg-gray-100 bg-black hover:text-gray-700 rounded-full shadow-md shadow-white p-2 "
               onClick={() => navigateToPage("Cards")}
             >
-              Cards
-            </li>
-            <li
-              className="hover:bg-gray-100 bg-black rounded-full shadow-md shadow-white p-2 "
-              onClick={() => navigateToPage("Wallet")}
-            >
-              Wallet
+              List
             </li>
           </ul>
         </div>

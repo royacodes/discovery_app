@@ -20,7 +20,7 @@ const HomePage = () => {
           {/* Main content area */}
           <div className="flex-grow overflow-auto m-0 p-0 w-full">
             <Routes>
-              <Route path="/" element={<GlobePage />} />
+              <Route path="/" element={<DiscoveryPage />} />
               <Route
                 path="/discovery_app"
                 element={
@@ -61,8 +61,14 @@ const HomePage = () => {
                   </AnimatedRoute>
                 }
               />
-              <Route path="/friends" element={<FriendsPage />} />
-              <Route path="/profile" element={<ProfilePage />} />
+              <Route
+                path="/bot"
+                element={
+                  <AnimatedRoute>
+                    <CardsPage />
+                  </AnimatedRoute>
+                }
+              />
             </Routes>
           </div>
 

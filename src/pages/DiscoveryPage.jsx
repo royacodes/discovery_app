@@ -7,9 +7,12 @@ import GlobeComponent from "../components/GlobeComponent.jsx";
 import "../components/Discovery/discovery.css";
 import FloatingButton from "../components/FloatingButton.jsx";
 import DiscoveryBody from "../components/Discovery/DiscoveryBody.jsx";
+import { BsList } from "react-icons/bs";
+import { IoMdClose } from "react-icons/io";
 
 const DiscoveryPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [isList, setIsList] = useState(false);
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
@@ -64,11 +67,25 @@ const DiscoveryPage = () => {
     <>
       <div className="relative w-full h-full bg-black">
         <GlobeComponent />
-        <div className="absolute inset-0 bg-black opacity-25 z-10"></div>
-        <div className="absolute top-0 left-0 right-0 text-white z-20 mx-4 max-w-full my-4">
-          <DiscoveryBody />
+        {isList && (
+          <div className="absolute inset-0 bg-black opacity-25 z-10"></div>
+        )}
+        {isList && (
+          <div className="absolute top-0 left-0 right-0 text-white z-20 mx-4 max-w-full my-5">
+            <DiscoveryBody />
+          </div>
+        )}
+        <div
+          className="fixed top-0 left-0 p-2 flex flex-col items-end z-30"
+          onClick={() => {
+            setIsList(!isList);
+          }}
+        >
+          {!isList && <BsList className="text-3xl" />}
+          {isList && <IoMdClose className="text-3xl" />}
         </div>
-        <FloatingButton navigateToPage={navigateToPage} />
+
+        {/* <FloatingButton navigateToPage={navigateToPage} /> */}
       </div>
     </>
   );

@@ -4,12 +4,14 @@ import { RiAiGenerate } from "react-icons/ri";
 import { LuWallet } from "react-icons/lu";
 import { SiSololearn } from "react-icons/si";
 import { LuBot } from "react-icons/lu";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
+import { MdDashboard } from "react-icons/md";
 
 const BottomNavBar = () => {
   const dispatch = useDispatch();
   const location = useLocation();
+  const isList = useSelector((state) => state.toggleListReducer.isListVisible);
 
   const toggleList = () => {
     dispatch({ type: "TOGGLE_LIST" });
@@ -62,12 +64,14 @@ const BottomNavBar = () => {
               }
             }}
           >
-            <NavLink
+            {/* <NavLink
               to="/discovery_app"
               className="flex items-center justify-center"
-            >
-              <FaGlobeAmericas className="text-5xl" />
-            </NavLink>
+            > */}
+            {isList && <FaGlobeAmericas className="text-5xl" />}
+            {!isList && <MdDashboard className="text-5xl" />}
+
+            {/* </NavLink> */}
           </button>
         </div>
         <button className="flex flex-col items-center bg-white">

@@ -7,7 +7,7 @@ const toggleListReducer = (state = initialState, action) => {
     case "TOGGLE_LIST":
       return {
         ...state,
-        isListVisible: true,
+        isListVisible: !state.isListVisible,
       };
     case "HIDE_LIST":
       return {

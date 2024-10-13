@@ -4,8 +4,17 @@ import { RiAiGenerate } from "react-icons/ri";
 import { LuWallet } from "react-icons/lu";
 import { SiSololearn } from "react-icons/si";
 import { LuBot } from "react-icons/lu";
+import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 
 const BottomNavBar = () => {
+  const dispatch = useDispatch();
+  const location = useLocation();
+
+  const toggleList = () => {
+    dispatch({ type: "TOGGLE_LIST" });
+  };
+
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-black bg-opacity-15 shadow-bottom-nav-shadow flex-shrink-0 z-40">
       <div className="max-w-lg mx-auto flex justify-around items-center py-3 relative">
@@ -45,8 +54,18 @@ const BottomNavBar = () => {
 
         {/* Circular Button in the center */}
         <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
-          <button className="w-16 h-16 bg-primary-color text-white rounded-full shadow-lg flex items-center justify-center border-4 border-white">
-            <NavLink to="/" className="flex items-center justify-center">
+          <button
+            className="w-16 h-16 bg-primary-color text-white rounded-full shadow-lg flex items-center justify-center border-4 border-white"
+            onClick={() => {
+              if (location.pathname === "/discovery_app") {
+                toggleList(); // Dispatch Redux action to toggle the list
+              }
+            }}
+          >
+            <NavLink
+              to="/discovery_app"
+              className="flex items-center justify-center"
+            >
               <FaGlobeAmericas className="text-5xl" />
             </NavLink>
           </button>

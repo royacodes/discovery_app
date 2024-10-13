@@ -1,18 +1,15 @@
 import React, { useState } from "react";
-import SearchBar from "../components/SearchBar/SearchBar.jsx";
-import CategoryHeader from "../components/Discovery/CategoryHeader.jsx";
-import CardItem from "../components/Discovery/CardItem.jsx";
-import { FaStar } from "react-icons/fa";
 import GlobeComponent from "../components/GlobeComponent.jsx";
 import "../components/Discovery/discovery.css";
-import FloatingButton from "../components/FloatingButton.jsx";
 import DiscoveryBody from "../components/Discovery/DiscoveryBody.jsx";
 import { BsList } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
+import { useSelector, useDispatch } from "react-redux";
 
 const DiscoveryPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [isList, setIsList] = useState(false);
+  const dispatch = useDispatch();
+  const isList = useSelector((state) => state.toggleListReducer.isListVisible);
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
@@ -72,20 +69,17 @@ const DiscoveryPage = () => {
         )}
         {isList && (
           <div className="absolute top-0 left-0 right-0 text-white z-20 mx-4 max-w-full my-5">
-            <DiscoveryBody />
+            <DiscoveryBody
+              handleHideList={() => dispatch({ type: "HIDE_LIST" })}
+            />
           </div>
         )}
         <div
           className="fixed top-0 left-0 p-2 flex flex-col items-end z-30"
-          onClick={() => {
-            setIsList(!isList);
-          }}
+          onClick={() => dispatch({ type: "TOGGLE_LIST" })}
         >
           {!isList && <BsList className="text-3xl" />}
-          {isList && <IoMdClose className="text-3xl" />}
         </div>
-
-        {/* <FloatingButton navigateToPage={navigateToPage} /> */}
       </div>
     </>
   );

@@ -1,10 +1,15 @@
 import { TbDeviceIpadHorizontalSearch } from "react-icons/tb";
 import { IoSearchSharp } from "react-icons/io5";
+import { IoMdClose } from "react-icons/io";
+import { FaArrowLeft } from "react-icons/fa6";
 
-const SearchBar = ({ searchTerm, handleSearch }) => {
+const SearchBar = ({ searchTerm, handleSearch, handleHideList }) => {
   return (
-    <div className="flex">
-      <div className="relative w-full mb-6 shadow-md rounded-3xl bg-black bg-opacity-15 shadow-silver-color">
+    <div className="flex items-center justify-center">
+      <div className="mr-2" onClick={handleHideList}>
+        <FaArrowLeft className="text-xl" />
+      </div>
+      <div className="relative w-full  shadow-md rounded-3xl bg-black bg-opacity-15 shadow-silver-color">
         <span className="absolute inset-y-0 left-3 flex items-center text-gray-500">
           <TbDeviceIpadHorizontalSearch className="text-white" />
         </span>

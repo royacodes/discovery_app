@@ -1,12 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import BottomNavBar from "../components/BottomNavBar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DiscoveryPage from "./DiscoveryPage";
 import EarnPage from "./EarnPage";
-import FriendsPage from "./FriendsPage";
-import ProfilePage from "./ProfilePage";
-import GlobePage from "./GlobePage";
-import FloatingButton from "../components/FloatingButton";
 import AnimatedRoute from "../AnimatedRoute";
 import MapPage from "./MapPage";
 import WalletPage from "./WalletPage";
@@ -14,6 +10,11 @@ import CardsPage from "./CardsPage";
 import BotPage from "./BotPage";
 
 const HomePage = () => {
+  const [isListVisible, setIsListVisible] = useState(false);
+
+  const handleToggleList = () => {
+    setIsListVisible((prev) => !prev);
+  };
   return (
     <>
       <Router>
@@ -21,14 +22,9 @@ const HomePage = () => {
           {/* Main content area */}
           <div className="flex-grow overflow-auto m-0 p-0 w-full">
             <Routes>
-              <Route path="/" element={<DiscoveryPage />} />
               <Route
                 path="/discovery_app"
-                element={
-                  <AnimatedRoute>
-                    <DiscoveryPage />
-                  </AnimatedRoute>
-                }
+                element={<DiscoveryPage onToggleList={handleToggleList} />}
               />
               <Route
                 path="/wallet"
@@ -73,7 +69,7 @@ const HomePage = () => {
             </Routes>
           </div>
 
-          <BottomNavBar />
+          <BottomNavBar onDiscoveryClick={handleToggleList} />
         </div>
       </Router>
     </>

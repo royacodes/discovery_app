@@ -45,19 +45,10 @@ const WalletPage = () => {
   };
   return (
     <>
-      <div className="relative w-full h-full bg-black">
-        <GlobeComponent />
-        <div className="absolute inset-0 bg-black opacity-25 z-10"></div>
+      <div className="flex flex-col w-full h-full bg-black">
         <div className="absolute top-0 left-0 right-0 text-white z-20 mx-4 max-w-full">
           <ProfileBar />
-          <div className="flex justify-center">
-            <img
-              src={imageSrc}
-              className="animate-rotate-horizontal h-40 w-40"
-            />
-          </div>{" "}
         </div>
-        <FloatingButton />
         <div className="absolute bottom-0 w-full h-1/2 bg-black bg-opacity-50 rounded-tl-3xl rounded-tr-3xl z-20 shadow-top-only">
           <div className="flex flex-col justify-center items-center max-w-full mx-4 mt-8">
             <div

@@ -57,7 +57,7 @@ const BottomNavBar = () => {
         {/* Circular Button in the center */}
         <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
           <button
-            className="w-16 h-16 bg-primary-color text-white rounded-full shadow-lg flex items-center justify-center border-4 border-white"
+            className="w-16 h-16 bg-deep-purple text-white rounded-full shadow-lg flex items-center justify-center border-4 border-white"
             onClick={() => {
               if (location.pathname === "/discovery_app") {
                 toggleList(); // Dispatch Redux action to toggle the list

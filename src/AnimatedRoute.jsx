@@ -13,7 +13,7 @@ const AnimatedRoute = ({ children }) => {
         initial={{ opacity: 0 }} // Start with transparent (fade-in)
         animate={{ opacity: 1 }} // Fully visible (fade-out)
         exit={{ opacity: 0 }} // Fade-out on exit
-        transition={{ duration: 0.5 }} // Adjust duration for smoother fade
+        transition={{ duration: 0.25 }} // Adjust duration for smoother fade
         style={{ backgroundColor: "black", minHeight: "100vh" }}
       >
         {children}

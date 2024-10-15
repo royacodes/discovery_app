@@ -7,11 +7,13 @@ import { LuBot } from "react-icons/lu";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { MdDashboard } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const BottomNavBar = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const isList = useSelector((state) => state.toggleListReducer.isListVisible);
+  const navigate = useNavigate();
 
   const toggleList = () => {
     dispatch({ type: "TOGGLE_LIST" });
@@ -61,6 +63,8 @@ const BottomNavBar = () => {
             onClick={() => {
               if (location.pathname === "/discovery_app") {
                 toggleList(); // Dispatch Redux action to toggle the list
+              } else {
+                navigate("/discovery_app");
               }
             }}
           >

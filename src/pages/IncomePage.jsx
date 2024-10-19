@@ -6,6 +6,7 @@ import neptune from "../assets/planets/neptune.jpg";
 import saturn from "../assets/planets/saturn.jpg";
 import uranus from "../assets/planets/uranus.jpg";
 import venus from "../assets/planets/venus.jpg";
+import nightSky from "../assets/globe/nightSky.png";
 
 import CardItem from "../components/Discovery/CardItem";
 import PlanetCardItem from "../components/income/PlanetCardItem";
@@ -13,9 +14,31 @@ import PlanetCardItem from "../components/income/PlanetCardItem";
 const IncomePage = () => {
   return (
     <>
-      <div className="h-screen flex flex-col bg-bg-color">
+      <div
+        className="h-screen flex flex-col bg-cover bg-center"
+        style={{ backgroundImage: `url(${nightSky})` }}
+      >
         <div className="flex-grow p-4">
-          <h1 className="text-center text-3xl font-bold mb-6">Planet Income</h1>
+          <div className="flex justify-start items-center p-4 bg-transparent rounded-lg shadow-md w-96">
+            {/* Circle Avatar */}
+            <div className="flex items-center border rounded-full p-[2px]">
+              {" "}
+              {/* Adjust padding for border */}
+              <img
+                src={mars}
+                alt="planet"
+                className="w-12 h-12 rounded-full object-cover"
+              />
+            </div>
+            <div className="flex flex-col justify-start items-start mx-2">
+              <span className="text-sm font-poppinsMedium text-[#D1D5DB]">
+                You are on
+              </span>
+              <span className="text-sm font-poppinsMedium text-[#9CA3AF]">
+                Mars
+              </span>
+            </div>
+          </div>
           <div className="min-w-full grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:mt-4 sm:pt-4 pt-4 mb-12">
             <PlanetCardItem
               id={1}

@@ -20,7 +20,7 @@ const BottomNavBar = () => {
   };
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-black bg-opacity-15 shadow-bottom-nav-shadow flex-shrink-0 z-40">
+    <nav className="fixed bottom-0 left-0 right-0 bg-black shadow-bottom-nav-shadow flex-shrink-0 z-40">
       <div className="max-w-lg mx-auto flex justify-around items-center py-3 relative">
         <button className="flex flex-col items-center bg-transparent">
           <NavLink

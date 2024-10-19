@@ -3,7 +3,7 @@ import { FaGlobeAmericas } from "react-icons/fa";
 import { RiAiGenerate } from "react-icons/ri";
 import { LuWallet } from "react-icons/lu";
 import { SiSololearn } from "react-icons/si";
-import { LuBot } from "react-icons/lu";
+import { GiReceiveMoney } from "react-icons/gi";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { MdDashboard } from "react-icons/md";
@@ -86,14 +86,14 @@ const BottomNavBar = () => {
 
         <button className="flex flex-col items-center bg-transparent">
           <NavLink
-            to="/bot"
+            to="/income"
             className={({ isActive }) =>
               `flex flex-col items-center ${
                 isActive ? "text-white" : "text-gray-400"
               }`
             }
           >
-            <LuBot className="text-3xl" />
+            <GiReceiveMoney className="text-3xl" />
             {/* <p className="text-gray-400 text-xs mt-[1px]">Game</p> */}
           </NavLink>
         </button>

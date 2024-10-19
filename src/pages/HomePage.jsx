@@ -7,7 +7,7 @@ import AnimatedRoute from "../AnimatedRoute";
 import MapPage from "./MapPage";
 import WalletPage from "./WalletPage";
 import CardsPage from "./CardsPage";
-import BotPage from "./BotPage";
+import IncomePage from "./IncomePage";
 
 const HomePage = () => {
   const [isListVisible, setIsListVisible] = useState(false);
@@ -59,10 +59,10 @@ const HomePage = () => {
                 }
               />
               <Route
-                path="/bot"
+                path="/income"
                 element={
                   <AnimatedRoute>
-                    <BotPage />
+                    <IncomePage />
                   </AnimatedRoute>
                 }
               />

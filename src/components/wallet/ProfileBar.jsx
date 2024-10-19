@@ -5,9 +5,9 @@ import profile from "../../assets/profile.webp";
 
 const ProfileBar = () => {
   return (
-    <div className="flex justify-between items-center p-4 bg-transparent rounded-lg shadow-md w-96">
+    <div className="flex justify-start items-center p-4 bg-transparent rounded-lg shadow-md w-96">
       {/* Circle Avatar */}
-      <div className="flex items-center border-none rounded-full p-[2px]">
+      <div className="flex items-center border rounded-full p-[2px]">
         {" "}
         {/* Adjust padding for border */}
         <img
@@ -15,6 +15,12 @@ const ProfileBar = () => {
           alt="Profile Avatar"
           className="w-12 h-12 rounded-full object-cover"
         />
+      </div>
+      <div className="flex flex-col justify-start items-start mx-2">
+        <span className="text-md font-poppinsMedium text-[#D1D5DB]">
+          Welcome Back!
+        </span>
+        <span className="text-sm text-[#9CA3AF]">RoyaCodes</span>
       </div>
 
       {/* Circle Buttons */}

@@ -10,6 +10,7 @@ import ProfileBar from "../components/wallet/ProfileBar.jsx";
 import tron from "../assets/tron.png";
 import ton from "../assets/ton.webp";
 import stable from "../assets/stable.png";
+import WalletDashboard from "../components/wallet/WalletDashboard.jsx";
 
 const WalletPage = () => {
   const [createClicked, setCreateClicked] = useState(false);
@@ -45,11 +46,12 @@ const WalletPage = () => {
   };
   return (
     <>
-      <div className="flex flex-col w-full h-full bg-black">
-        <div className="absolute top-0 left-0 right-0 text-white z-20 mx-4 max-w-full">
+      <div className="flex flex-col w-full h-full bg-[#1A1B22]  ">
+        <div className="text-white z-20 mx-4 max-w-full">
           <ProfileBar />
         </div>
-        <div className="absolute bottom-0 w-full h-1/2 bg-black bg-opacity-50 rounded-tl-3xl rounded-tr-3xl z-20 shadow-top-only">
+        <WalletDashboard />
+        {/* <div className="absolute bottom-0 w-full h-1/2 bg-black bg-opacity-50 rounded-tl-3xl rounded-tr-3xl z-20 shadow-top-only">
           <div className="flex flex-col justify-center items-center max-w-full mx-4 mt-8">
             <div
               onClick={() => handleClick({ buttonType: "wallet" })}
@@ -76,7 +78,7 @@ const WalletPage = () => {
               Connect to Tron Wallet
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

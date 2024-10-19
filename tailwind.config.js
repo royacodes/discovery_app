@@ -26,6 +26,7 @@ module.exports = {
         "bold-gold": "#FFD700",
         "gray-sh": "#F5F5F5",
         "primary-color": "#45AAB8",
+        "purple-color": "#703bfb",
         "ton-blue": "#0098EA",
         "tron-red": "#FF0013",
         "bg-color": "#121212",

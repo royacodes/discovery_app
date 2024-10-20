@@ -5,7 +5,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import CardItem from "../components/Discovery/CardItem";
 
 const GiftCard = ({
-  backgroundImage,
   title,
   setTitle,
   description,
@@ -19,13 +18,7 @@ const GiftCard = ({
     e.preventDefault();
   };
   return (
-    <div
-      className="border rounded-lg w-full h-40 flex items-center justify-center shadow-md hover:shadow-lg transition-shadow"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-      }}
-    >
+    <div className="border rounded-lg w-full h-40 flex items-center justify-center shadow-md hover:shadow-lg transition-shadow">
       <div className="flex flex-col items-center">
         <input
           type="text"
@@ -41,7 +34,7 @@ const GiftCard = ({
           className="bg-transparent text-white text-lg font-bold text-center outline-none"
           placeholder="Enter Description"
         />
-        <div className="flex justify-between">
+        <div className="flex items-center justify-between mx-8">
           <input
             type="text"
             value={price}
@@ -63,21 +56,6 @@ const GiftCard = ({
   );
 };
 
-const ImageSelector = ({ images, onSelect }) => {
-  return (
-    <div className="grid grid-cols-3 gap-2">
-      {images.map((image, index) => (
-        <img
-          key={index}
-          src={image}
-          alt="Background option"
-          className="cursor-pointer w-20 h-20 rounded-md border"
-          onClick={() => onSelect(image)}
-        />
-      ))}
-    </div>
-  );
-};
 const TypeSelector = ({ types, onSelect }) => {
   return (
     <div className="grid grid-cols-3 gap-2">
@@ -94,21 +72,12 @@ const TypeSelector = ({ types, onSelect }) => {
 };
 
 const CardsPage = () => {
-  const [showImageSelector, setShowImageSelector] = useState(false);
-  const [selectedImage, setSelectedImage] = useState("");
+  const [showCard, setShowCard] = useState(false);
   const [selectedType, setSelectedType] = useState("");
   const [title, setTitle] = useState("Enter Card's Title");
   const [description, setDescription] = useState("Enter Card's Description");
   const [price, setPrice] = useState("Price");
   const [expDate, setExpDate] = useState(null);
-
-  const images = [
-    "https://via.placeholder.com/150/FF0000",
-    "https://via.placeholder.com/150/00FF00",
-    "https://via.placeholder.com/150/0000FF",
-    "https://via.placeholder.com/150/FFFF00",
-    "https://via.placeholder.com/150/00FFFF",
-  ];
   const types = ["request", "demand", "trade", "stake", "money"];
   const steps = ["card", "description", "detail"];
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -125,21 +94,25 @@ const CardsPage = () => {
       setCurrentIndex(currentIndex - 1);
     }
   };
-  const handleImageSelect = (image) => {
-    setSelectedImage(image);
-    setShowImageSelector(false);
-  };
+
   const handleTypeSelect = (type) => {
     setSelectedType(type);
-    setShowImageSelector(false);
   };
 
   return (
     <div className="flex flex-col items-center h-screen w-full p-6 bg-bg-color overflow-hidden">
-      <div className="relative border-dashed border-2 border-gray-300 rounded-lg w-full h-40 flex items-center justify-center">
-        {selectedType ? (
+      <div className="relative border-dashed border-2 border-gray-300 rounded-lg w-full py-4 mb-4 flex items-center justify-center">
+        <button
+          onClick={() => setShowCard(!showCard)}
+          className="flex flex-col items-center text-gray-300"
+        >
+          <FaPlus className="text-3xl" />
+          <span>Create New Card</span>
+        </button>
+      </div>
+      {showCard && (
+        <>
           <GiftCard
-            backgroundImage={selectedImage}
             title={title}
             setTitle={setTitle}
             description={description}
@@ -149,18 +122,10 @@ const CardsPage = () => {
             expDate={expDate}
             setExpDate={setExpDate}
           />
-        ) : (
-          <button
-            onClick={() => setShowImageSelector(!showImageSelector)}
-            className="flex flex-col items-center text-gray-300"
-          >
-            <FaPlus className="text-3xl" />
-            <span>Create New Card</span>
-          </button>
-        )}
-      </div>
+        </>
+      )}
 
-      {selectedType && (
+      {showCard && (
         <div className="flex justify-between w-full mt-5">
           <button
             className="bg-deep-purple w-32 rounded-lg px-4 py-2 disabled:bg-gray-400"
@@ -180,12 +145,12 @@ const CardsPage = () => {
       )}
 
       {/* Image Selector */}
-      {showImageSelector && (
+      {/* {showImageSelector && (
         <div className="mt-4">
           <h4 className="text-gray-200 mb-2">Choose a Card Type:</h4>
           <TypeSelector types={types} onSelect={handleTypeSelect} />
         </div>
-      )}
+      )} */}
 
       {/* Slide Wrapper */}
       <div className="relative w-full mt-12 mb-8 overflow-hidden">

@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { MdDashboard } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { BsCardChecklist } from "react-icons/bs";
 
 const BottomNavBar = () => {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ const BottomNavBar = () => {
               }`
             }
           >
-            <SiSololearn className="text-2xl" />
+            <BsCardChecklist className="text-2xl" />
             {/* <p className="text-gray-400 text-xs mt-[1px]">Earn</p> */}
           </NavLink>
         </button>
@@ -93,7 +94,7 @@ const BottomNavBar = () => {
               }`
             }
           >
-            <GiReceiveMoney className="text-3xl" />
+            <SiSololearn className="text-3xl" />
             {/* <p className="text-gray-400 text-xs mt-[1px]">Game</p> */}
           </NavLink>
         </button>
